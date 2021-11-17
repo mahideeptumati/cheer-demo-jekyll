@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CHEER [PROTOTYPE]</title>
+    <link
+      rel="stylesheet"
+     href={{"assets/lib/leaflet.css" | relative_url}}
+
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    ></link>
+    <link rel="stylesheet" href={{"assets/lib/bootstrap.min.css" | relative_url }}/>
+
+    <link rel="stylesheet" href={{"assets/lib/MarkerCluster.Default.css" | relative_url }}/>
+    <link rel="stylesheet" href={{"assets/css/helper.css" | relative_url}} />
+
+
+    <script src={{"assets/lib/popper.min.js" | relative_url}}></script>
+
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="top-div top-div-title">Food Retailing and Distribution</div>
+      <div class="bottom-div">
+        <div class="left">
+          <div id="filter-div">
+            <div class="filterLayer">Select Layers</div>
+            <hr class="hr-tag" />
+          </div>
+          <br />
+          <div id="cash-filter-heading">
+            <div class="filterLayer">
+              Cash Type
+              <div id="cash-filter">
+                <hr class="hr-tag" />
+              </div>
+              <br />
+              <div class="form-check" id="noCashDiv" style="display: none">
+                <input
+                  class="form-check-input"
+                  name="paymentFilter"
+                  type="checkbox"
+                  value=""
+                  onclick="userRequestedFilter(this)"
+                  id="na"
+                />
+                <label class="form-check-label" for="NoCash">
+                  Include No Cash Type
+                </label>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div id="date-filter-heading">
+            <div class="filterLayer">
+              Availability
+              <div id="availability-filter">
+                <hr class="hr-tag" />
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  name="dateFilter"
+                  type="checkbox"
+                  value="false"
+                  onclick="filterOpenToday(this)"
+                  id="openToday"
+                />
+                <label class="form-check-label" for="openToday">
+                  Is in season
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div class="fullSize">
+            <content>
+              <div class="fullSize">
+                <div id="mapDiv" class="top-div top-div-border">
+                  <div class="countDiv left" id="count">
+                    <div id="countLoading" class="fullSize">
+                      <div class="loader"></div>
+                    </div>
+                    <div id="grid-container" class="grid-container">
+                      <div class="grid-row font-weight-600">
+                        The current map extent below has
+                      </div>
+                      <div id="count-div" class="grid-row big-font"></div>
+                      <div class="grid-row font-weight-600">
+                        food retail and distribution locations
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right squareFtDiv" id="area">
+                    <div id="squareFtCountLoading" class="fullSize">
+                      <div class="loader"></div>
+                    </div>
+                    <div id="grid-container" class="grid-container">
+                      <div class="grid-row font-weight-600">
+                        The current map extent below has
+                      </div>
+                      <div id="square-feet-div" class="grid-row big-font"></div>
+                      <div class="grid-row font-weight-600">
+                        food retail and distribution locations
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="mapid" />
+              </div>
+            </content>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="pie-chart" style="width: 130%; height: auto" id="pie-chart">
+          <canvas id="myChart" class="explore_area" id="viewport"></canvas>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src={{ "assets/lib/leaflet.js" | relative_path }}
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""
+  ></script>
+  <script src={{"assets/lib/jquery-3.6.0.min.js" | relative_url}}></script>
+       <script src={{"assets/lib/bootstrap.min.js" | relative_url}}></script>
+
+  <script src={{"assets/lib/leaflet.markercluster.js" | relative_url}}></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script type="text/javascript" src={{"assets/scripts/helper.js" | relative_url}}></script>
+  <script type="text/javascript" src={{"assets/scripts/pie-helper.js" | relative_url}}></script>
+  <script src={{"assets/lib/plugins/leaflet.ajax.min.js"| relative_url}}></script>
+</html>

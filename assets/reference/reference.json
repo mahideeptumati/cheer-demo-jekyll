@@ -1,0 +1,57 @@
+{
+  "layersIndex": [
+    {
+      "id": "retailFoodStore",
+      "layerName": "Retail Food Store",
+      "fileName": "NYS-RetailFoodStores.json",
+      "path": "Layers/json-files/NYS-RetailFoodStores.json",
+      "isChecked": false
+    },
+    {
+      "id": "farmerWithMarket",
+      "layerName": "Farmers with Markets",
+      "fileName": "AMS-USDA-Directories-FarmersMarkets.json",
+      "path": "Layers/json-files/AMS-USDA-Directories-FarmersMarkets.json",
+      "isChecked": true
+    },
+    {
+      "id": "farmerWithStore",
+      "layerName": "Farmers with Stores",
+      "fileName": "AMS-USDA-Directories-Farms.json",
+      "path": "Layers/json-files/AMS-USDA-Directories-Farms.json",
+      "isChecked": true
+    }
+  ],
+  "paymentFilter": [
+    {
+      "id": "cash",
+      "displayValue": "Cash"
+    },
+    {
+      "id": "credit",
+      "displayValue": "Credit"
+    },
+    {
+      "id": "snap",
+      "displayValue": "Snap"
+    },
+    {
+      "id": "wic",
+      "displayValue": "Wic"
+    },
+    {
+      "id": "wic_cash",
+      "displayValue": "Wic Cash"
+    },
+    {
+      "id": "sfmnp",
+      "displayValue": "SFMP"
+    }
+  ],
+  "mapInfo": {
+    "setView": [43.016844, -78.741447],
+    "titleLayer": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+    "attribution": "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ",
+    "maxZoom": 16
+  }
+}
