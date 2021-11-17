@@ -99,7 +99,7 @@ function countVisibleMarkers(map) {
   return markerCount;
 }
 function reloadPieChart(pieChartData, defaultInfo) {
-  console.log(pieChartData);
+  //console.log(pieChartData);
   defaultInfo.labels = [];
   defaultInfo.datasets[0].data = [];
   Object.entries(pieChartData).forEach(([jsonLayerName, jsonCount]) => {
