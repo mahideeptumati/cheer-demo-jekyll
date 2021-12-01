@@ -384,6 +384,7 @@ function filterOpenToday(event) {
 }
 
 function userRequestedLayerToggle(event) {
+  console.log("test");
   let layer = event.attributes["data-layer"].value;
 
   if (event.checked) {
