@@ -3,6 +3,7 @@ body {
   height: 100%;
   padding: 0px;
   margin: 0px;
+  color: #7fa6bf;
 }
 content {
   height: 100%;
@@ -14,13 +15,57 @@ svg {
   position: absolute;
 }
 
+img#cart-image {
+  width: 3%;
+}
+
 #mapid {
-  display: inline-block;
+  /* display: inline-block; */
   flex-grow: 1;
-  height: 90%;
+  height: 75%;
   width: 100%;
   padding: 5px;
+  border-bottom: 6px solid #9cc9e5 !important;
 }
+.bottom-div-font {
+  font-family: "Avenir Next W01", "Avenir Next W00", "Avenir Next", Avenir,
+    "Helvetica Neue", sans-serif;
+  border-right: 6px solid #9cc9e5 !important;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  padding-left: 2px;
+  padding-right: 2px;
+  max-height: 100%;
+  overflow: auto;
+}
+.bottom-div-font-last {
+  font-family: "Avenir Next W01", "Avenir Next W00", "Avenir Next", Avenir,
+    "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+}
+.border-bottom {
+  border-bottom: 6px solid #9cc9e5 !important;
+}
+
+.image-div {
+  height: 70%;
+  width: 100%;
+}
+
+img#co-op-image {
+  height: 100%;
+  width: 100%;
+}
+
+div#spot-light-text {
+  max-height: 13%;
+  padding: 1%;
+  overflow: auto;
+}
+
 #layers {
   display: inline-block;
   flex: 0 200px;
@@ -42,10 +87,10 @@ div#grid-container {
   font-size: 12px;
 }
 .loader {
-  border: 5px solid #f3f3f3;
+  border: 6px solid #f3f3f3;
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
-  border-top: 5px solid #555;
+  border-top: 6px solid #555;
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -67,7 +112,7 @@ div#grid-container {
 }
 .top-div-border {
   border: unset !important ;
-  border-bottom: 3px solid #0079c1 !important;
+  border-bottom: 6px solid #9cc9e5 !important;
 }
 .countDiv {
   width: 50% !important;
@@ -91,13 +136,14 @@ div#count {
 .squareFtDiv {
   width: 50% !important;
   border: unset !important;
-  border-left: 3px solid #0079c1 !important;
+  border-left: 6px solid #9cc9e5 !important;
   padding: unset !important;
-  border-bottom: 3px solid #0079c1 !important;
+  border-bottom: 6px solid #9cc9e5 !important;
 }
 #pie-chart {
   width: 130%;
   height: auto;
+  padding: 4%;
 }
 @-webkit-keyframes spin {
   0% {
@@ -138,18 +184,19 @@ div#count {
   }
   .top-div {
     overflow: auto;
-    border: 3px solid #0079c1 !important;
+    border: 6px solid #9cc9e5 !important;
     height: 8%;
+    color: #62a9d8 !important;
   }
   .top-div-title {
     font-size: larger;
-    padding: 2%;
+    padding: 0.5%;
     text-align: left;
     font-weight: 400;
   }
   .main-div {
     height: 100%;
-    background: rgb(225, 236, 239);
+    /* background: rgb(225, 236, 239); */
   }
 
   div#mapDiv {
@@ -161,7 +208,7 @@ div#count {
     overflow: auto;
     #background-color: #2196f3;
     padding: 20px;
-    border: 3px solid #0079c1 !important;
+    border: 6px solid #9cc9e5 !important;
     border-top: none !important;
     border-bottom: none !important;
     height: 20%;
@@ -169,14 +216,14 @@ div#count {
   .main {
     overflow: auto;
     #background-color: #f1f1f1;
-    border: 3px solid #0079c1 !important;
+    border: 6px solid #9cc9e5 !important;
     height: 60%;
   }
   .right {
     overflow: auto;
     background-color: #4caf50;
     padding: 20px;
-    border: 3px solid #0079c1 !important;
+    border: 6px solid #9cc9e5 !important;
     border-top: none !important;
     height: 20%;
   }
@@ -195,24 +242,27 @@ div#count {
 @media only screen and (min-width: 480px) {
   .main-div {
     height: 100%;
-    background: rgb(225, 236, 239);
+    /* background: rgb(225, 236, 239); */
   }
 
   .top-div {
     overflow: auto;
-    border: 3px solid #0079c1 !important;
+    border: 6px solid #9cc9e5 !important;
     border-bottom: none !important;
-    height: 10%;
+    height: 8%;
+  }
+  .top-div-height {
+    height: 10% !important;
   }
   .top-div-title {
     font-size: larger;
-    padding: 2%;
+    padding: 0.5%;
     text-align: left;
     font-weight: 400;
   }
   .bottom-div {
     overflow: auto;
-    height: 85%;
+    height: 92%;
   }
   .left {
     overflow: auto;
@@ -221,7 +271,7 @@ div#count {
     float: left;
     width: 18%;
     /* The width is 20%, by default */
-    border: 3px solid #0079c1 !important;
+    border: 6px solid #9cc9e5 !important;
     border-right: none !important;
     height: 100%;
   }
@@ -230,16 +280,16 @@ div#count {
     #background-color: #f1f1f1;
     float: left;
     width: 64%;
-    border: 3px solid #0079c1 !important;
+    border: 6px solid #9cc9e5 !important;
     height: 100%;
   }
   .right {
     overflow: auto;
     #background-color: #4caf50;
-    padding: 20px;
+    /* padding: 20px; */
     float: left;
     width: 18%;
-    border: 3px solid #0079c1;
+    border: 6px solid #9cc9e5;
     border-left: none;
     height: 100%;
   }
@@ -250,7 +300,7 @@ div#count {
 
 div.explore_area {
   position: relative;
-  width: 400px;
+  width: 300px;
   height: 300px;
   overflow: auto;
 }

@@ -1,141 +1,171 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CHEER [PROTOTYPE]</title>
-    <link
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>{{page.title}} </title>
+      <link
       rel="stylesheet"
-     href={{"assets/lib/leaflet.css" | relative_url}}
-
+      href={{"assets/lib/leaflet.css" | relative_url}}
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
-    ></link>
-    <link rel="stylesheet" href={{"assets/lib/bootstrap.min.css" | relative_url}}> </link>
-
-    <link rel="stylesheet" href={{"assets/lib/MarkerCluster.Default.css" | relative_url}}></link>
-    <link rel="stylesheet" href={{"assets/css/helper.css" | relative_url}} />
-
-
-    <script src={{"assets/lib/popper.min.js" | relative_url}}></script>
-
-  </head>
-  <body>
-    <div class="main-div">
-      <div class="top-div top-div-title">Food Retailing and Distribution</div>
+      ></link>
+      <link rel="stylesheet" href={{"assets/lib/bootstrap.min.css" | relative_url}}> </link>
+      <link rel="stylesheet" href={{"assets/lib/MarkerCluster.Default.css" | relative_url}}></link>
+      <link rel="stylesheet" href={{"assets/css/helper.css" | relative_url}} />
+      <script src={{"assets/lib/popper.min.js" | relative_url}}></script>
+   </head>
+   <body class="text-color">
+      <div class="main-div">
+      <div class="top-div top-div-title">
+         <div><img id="cart-image" src="assets/lib/images/cart.png"/>
+            Food Retailing and Distribution 
+         </div>
+      </div>
       <div class="bottom-div">
-        <div class="left">
-          <div id="filter-div">
-            <div class="filterLayer">Select Layers</div>
-            <hr class="hr-tag" />
-          </div>
-          <br />
-          <div id="cash-filter-heading">
-            <div class="filterLayer">
-              Cash Type
-              <div id="cash-filter">
-                <hr class="hr-tag" />
-              </div>
-              <br />
-              <div class="form-check" id="noCashDiv" style="display: none">
-                <input
-                  class="form-check-input"
-                  name="paymentFilter"
-                  type="checkbox"
-                  value=""
-                  onclick="userRequestedFilter(this)"
-                  id="na"
-                />
-                <label class="form-check-label" for="NoCash">
-                  Include No Cash Type
-                </label>
-              </div>
+         <div class="left">
+            <div id="filter-div">
+               <div class="filterLayer">Select Layers</div>
+               <hr class="hr-tag" />
             </div>
-          </div>
-          <br />
-          <div id="date-filter-heading">
-            <div class="filterLayer">
-              Availability
-              <div id="availability-filter">
-                <hr class="hr-tag" />
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  name="dateFilter"
-                  type="checkbox"
-                  value="false"
-                  onclick="filterOpenToday(this)"
-                  id="openToday"
-                />
-                <label class="form-check-label" for="openToday">
-                  Is in season
-                </label>
-              </div>
+            <br />
+            <div id="cash-filter-heading">
+               <div class="filterLayer">
+                  Cash Type
+                  <div id="cash-filter">
+                     <hr class="hr-tag" />
+                  </div>
+                  <br />
+                  <div class="form-check" id="noCashDiv" style="display: none">
+                     <input
+                        class="form-check-input"
+                        name="paymentFilter"
+                        type="checkbox"
+                        value=""
+                        onclick="userRequestedFilter(this)"
+                        id="na"
+                        />
+                     <label class="form-check-label" for="NoCash">
+                     Include No Cash Type
+                     </label>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-        <div class="main">
-          <div class="fullSize">
-            <content>
-              <div class="fullSize">
-                <div id="mapDiv" class="top-div top-div-border">
-                  <div class="countDiv left" id="count">
-                    <div id="countLoading" class="fullSize">
-                      <div class="loader"></div>
-                    </div>
-                    <div id="grid-container" class="grid-container">
-                      <div class="grid-row font-weight-600">
-                        The current map extent below has
-                      </div>
-                      <div id="count-div" class="grid-row big-font"></div>
-                      <div class="grid-row font-weight-600">
-                        food retail and distribution locations
-                      </div>
-                    </div>
+            <br />
+            <div id="date-filter-heading">
+               <div class="filterLayer">
+                  Availability
+                  <div id="availability-filter">
+                     <hr class="hr-tag" />
                   </div>
-                  <div class="right squareFtDiv" id="area">
-                    <div id="squareFtCountLoading" class="fullSize">
-                      <div class="loader"></div>
-                    </div>
-                    <div id="grid-container" class="grid-container">
-                      <div class="grid-row font-weight-600">
-                        The current map extent below has
-                      </div>
-                      <div id="square-feet-div" class="grid-row big-font"></div>
-                      <div class="grid-row font-weight-600">
-                        square foot of food retail stores
-                      </div>
-                    </div>
+                  <div class="form-check">
+                     <input
+                        class="form-check-input"
+                        name="dateFilter"
+                        type="checkbox"
+                        value="false"
+                        onclick="filterOpenToday(this)"
+                        id="openToday"
+                        />
+                     <label class="form-check-label" for="openToday">
+                     Is in season
+                     </label>
                   </div>
-                </div>
-
-                <div id="mapid" />
-              </div>
-            </content>
-          </div>
-        </div>
+               </div>
+            </div>
+         </div>
+         <div class="main">
+            <div class="fullSize">
+               <content>
+                  <div class="fullSize">
+                     <div id="mapDiv" class="top-div top-div-border top-div-height">
+                        <div class="countDiv left" id="count">
+                           <div id="countLoading" class="fullSize">
+                              <div class="loader"></div>
+                           </div>
+                           <div id="grid-container" class="grid-container">
+                              <div class="grid-row font-weight-600">
+                                 The current map extent below has
+                              </div>
+                              <div id="count-div" class="grid-row big-font"></div>
+                              <div class="grid-row font-weight-600">
+                                 food retail and distribution locations
+                              </div>
+                           </div>
+                        </div>
+                        <div class="right squareFtDiv" id="area">
+                           <div id="squareFtCountLoading" class="fullSize">
+                              <div class="loader"></div>
+                           </div>
+                           <div id="grid-container" class="grid-container">
+                              <div class="grid-row font-weight-600">
+                                 The current map extent below has
+                              </div>
+                              <div id="square-feet-div" class="grid-row big-font"></div>
+                              <div class="grid-row font-weight-600">
+                                 square foot of food retail stores
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="mapid" />
+                     </div>
+                     <div class="row" style="width: 100%; height: 15%; margin-left: unset;">
+                        <div class="col-md-5 bottom-div-font">
+                           <p>This dashboard displays&nbsp;<strong>retailing and distribution</strong>&nbsp;locations and related information of&nbsp;the Western New York (WNY) food system.&nbsp;&nbsp;</p>
+                           <br/>
+                           <p><strong>Food retailing and distribution</strong>&nbsp;are related to the selling of food to consumers to be prepared or eaten off-site. Food retail takes place in a variety of venues, including grocery stores, farmers' markets, general merchandise stores, and corner stores. Consumers include households, individuals, and institutions.</p>
+                           <br/>
+                           <p><strong>Data sources:</strong></p>
+                           <ul>
+                              <li>New York State Department of Agriculture and Markets</li>
+                              <li>USDA Agricultural Marketing Service</li>
+                              <li>U.S. Census Bureau</li>
+                              <li>U.S. Bureau of Economic Analysis</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-3 bottom-div-font">
+                           <h5>Food Retail Pop-ups</h5>
+                        </div>
+                        <div class="col-md-4 bottom-div-font-last">
+                           <div >
+                              <p><span style="font-size:18px"><strong>Quick Fact</strong></span></p>
+                           </div>
+                        </div>
+                     </div>
+               </content>
+               </div>
+            </div>
+         </div>
+         <div class="right">
+            <div class="pie-chart border-bottom" style="width: 120%; height: auto" id="pie-chart">
+               <h5><span style="font-size:20px"><strong>Food Retail and Distribution Types</strong></span></h5>
+               <canvas id="myChart" class="explore_area" id="viewport"></canvas>
+            </div>
+            <div style="height:32%">
+               <h5>Spotlight on:&nbsp;<em><strong>East Aurora Co-op Market</strong></em></h5>
+               <div class="image-div">
+                  <img  id= "co-op-image" src="assets/lib/images/co-op-image.jpeg" alt="Italian Trulli">
+               </div>
+            </div>
+            <div id="spot-light-text">
+               <p>The co-op was founded in part to increase access to local foods and supporting and sourcing from WNY farms and producers continues in our work every day! From year-round local apples to fresh dairy, Buffalo-made pierogi, to locally brewed beers, natural meats from WNY farms, and local ingredients in our prepared foods, we’re committed to building our regional economy.</p>
+               <p>Website:&nbsp;<a href="https://eastaurora.coop/">East Aurora Co-op Market</a></p>
+            </div>
+         </div>
       </div>
-      <div class="right">
-        <div class="pie-chart" style="width: 120%; height: auto" id="pie-chart">
-          <canvas id="myChart" class="explore_area" id="viewport"></canvas>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script
-    src={{ "assets/lib/leaflet.js" | relative_path }}
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""
-  ></script>
-  <script type="text/javascript" src={{"assets/lib/jquery-3.6.0.min.js" | relative_url}}></script>
-       <script type="text/javascript" src={{"assets/lib/bootstrap.min.js" | relative_url}}></script>
-
-  <script src={{"assets/lib/leaflet.markercluster.js" | relative_url}}></script>
-  <script src={{"assets/lib/charts.lib.js" | relative_url}}></script>
-
-  <script type="text/javascript" src={{"assets/scripts/helper.js" | relative_url}}></script>
-  <script type="text/javascript" src={{"assets/scripts/pie-helper.js" | relative_url}}></script>
-  <script type="text/javascript" src={{"assets/lib/plugins/leaflet.ajax.min.js"| relative_url}}></script>
+   </body>
+   <script
+   src={{ "assets/lib/leaflet.js" | relative_path }}
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""
+   ></script>
+   <script type="text/javascript" src={{"assets/lib/jquery-3.6.0.min.js" | relative_url}}></script>
+   <script type="text/javascript" src={{"assets/lib/bootstrap.min.js" | relative_url}}></script>
+   <script src={{"assets/lib/leaflet.markercluster.js" | relative_url}}></script>
+   <script src={{"assets/lib/charts.lib.js" | relative_url}}></script>
+   <script type="text/javascript" src={{"assets/scripts/helper.js" | relative_url}}></script>
+   <script type="text/javascript" src={{"assets/scripts/pie-helper.js" | relative_url}}></script>
+   <script type="text/javascript" src={{"assets/lib/plugins/leaflet.ajax.min.js"| relative_url}}></script>
 </html>
